@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <title>Bootstrap 4 Layout</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+  <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <div class="container mt-3 mt-md-3">
+    <div class="row">
+      <div class="col-sm-10 col-md-10 bg-dark d-flex align-items-center">
+        <h1 class="text-light p-3 p-md-3 pl-md-5">TWITCH STREAMERS</h1>
+      </div>
+      <div class="col-sm-2 col-md-2 bg-dark menu">
+        <div class="list-group" id="myList" role="tablist">
+          <a class="list-group-item list-group-item-action active" data-toggle="list" href="#all" role="tab">All</a>
+          <a class="list-group-item list-group-item-action" data-toggle="list" href="#online" role="tab">Online</a>
+          <a class="list-group-item list-group-item-action" data-toggle="list" href="#offline" role="tab">Offline</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <div class="tab-content">
+          <div class="tab-pane active" id="all" role="tabpanel">
+            <ul class="list-group all-list"></ul>
+          </div>
+          <div class="tab-pane" id="online" role="tabpanel">
+            <ul class="list-group online-list"></ul>
+          </div>
+          <div class="tab-pane" id="offline" role="tabpanel">
+            <ul class="list-group offline-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/twitch-app.js"></script>
+</body>
+
+</html>
