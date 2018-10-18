@@ -1,5 +1,3 @@
-// TODO:  width<1200px : menu bug
-
 // Twitchtv API requests : JSON , ajax
 
 $(function() {
@@ -11,7 +9,7 @@ $(function() {
       type: 'GET',
       url: 'https://api.twitch.tv/kraken/streams/' + nick,
       headers: {
-        'Client-ID': api - key
+        'Client-ID': 'api-key'
       },
       success: function(data) {
         if (data.stream != null) {
@@ -19,7 +17,7 @@ $(function() {
             type: 'GET',
             url: 'https://api.twitch.tv/kraken/channels/' + nick,
             headers: {
-              'Client-ID': api - key
+              'Client-ID': 'api-key'
             },
             success: function(data) {
               $('.all-list').prepend('<li class="list-group-item online p-4 p-md-4"><img src="' + data.logo + '" class="rounded-circle" alt=""><a href="#">' + data.display_name + '</a><span>' + data.status + '</span></li>');
@@ -31,7 +29,7 @@ $(function() {
             type: 'GET',
             url: 'https://api.twitch.tv/kraken/channels/' + nick,
             headers: {
-              'Client-ID': api - key
+              'Client-ID': 'api-key'
             },
             success: function(data) {
               $('.all-list').append('<li class="list-group-item disabled offline p-4 p-md-4"><img src="' + data.logo + '" class="rounded-circle" alt=""><a href="#">' + data.display_name + '</a><span>Offline</span></li>');
@@ -47,7 +45,9 @@ $(function() {
     twitch_ajax(channels[i]);
   }
 
-  // animations
+  // animations for width > 1200
+
+if(screen.width>1200){
 
   $('.list-group-item').mouseenter(function() {
     if ($(this).hasClass('active') == false) {
@@ -70,5 +70,7 @@ $(function() {
       'right': '0px'
     }, 500);
   });
+
+}
 
 });
