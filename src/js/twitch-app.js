@@ -9,7 +9,8 @@ $(function() {
       type: 'GET',
       url: 'https://api.twitch.tv/kraken/streams/' + nick,
       headers: {
-        'Client-ID': 'api-key'
+        'Client-ID': '44fjq05z7s9a6o1o2njair9dm8nueq'
+
       },
       success: function(data) {
         if (data.stream != null) {
@@ -17,7 +18,8 @@ $(function() {
             type: 'GET',
             url: 'https://api.twitch.tv/kraken/channels/' + nick,
             headers: {
-              'Client-ID': 'api-key'
+              'Client-ID': '44fjq05z7s9a6o1o2njair9dm8nueq'
+
             },
             success: function(data) {
               $('.all-list').prepend('<li class="list-group-item online p-4 p-md-4"><img src="' + data.logo + '" class="rounded-circle" alt=""><a href="#">' + data.display_name + '</a><span>' + data.status + '</span></li>');
@@ -29,7 +31,8 @@ $(function() {
             type: 'GET',
             url: 'https://api.twitch.tv/kraken/channels/' + nick,
             headers: {
-              'Client-ID': 'api-key'
+              'Client-ID': '44fjq05z7s9a6o1o2njair9dm8nueq'
+
             },
             success: function(data) {
               $('.all-list').append('<li class="list-group-item disabled offline p-4 p-md-4"><img src="' + data.logo + '" class="rounded-circle" alt=""><a href="#">' + data.display_name + '</a><span>Offline</span></li>');
